@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>** Object Destructuring **</title>
+
+    <script>
+        "use strict"
+    // ** 1. 객체 구조분해 사례
+    // => 아래 코드는 sandwich 객체를 분해해서 bread, meat의 값을 같은 이름의 변수에 넣어줌.
+    // => 그러나 두변수의 값을 변경해도 sandwich의 값에 영향을 주지는 않는다.  
+    let sandwich = {
+        bread:"더치크런치",
+        meat:"한우",
+        cheese:"체다치즈",
+        toppings:["샐러리","토마토","머스터드","케찹","베이컨","감자"]
+    }
+
+    let {bread , meat} = sandwich;
+    // let bread = sandwich;        // 이건 그냥 변수선언해서 sandwich의 객체 주소값을 넣은 것임
+    // let meat = sandwich;         // 이건 그냥 변수선언해서 sandwich의 객체 주소값을 넣은 것임
+    console.log(`** before=> , ${bread}, ${meat}`);
+    console.log(bread);
+
+    bread="통밀빵";
+    console.log(`** after=> , ${bread}, ${meat}`);
+    console.log(`** sandwich => ${sandwich.bread}, ${sandwich.meat}`);
+
+    sandwich.bread = bread;
+    console.log(`** sandwich.bread => ${sandwich.bread}`);
+
+
+
+    // ** 2. Object 축약표현
+    // 2.1) Property 축약
+    // => ES5
+
+    let x=1, y=1;
+    let oldObj = {
+        x:x,            // 값 할당
+        y:y,            // 값 할당
+        sayHi: function(){
+            console.log(`sayHi_Old => x=${oldObj.x}, y=${this.y} :D`);
+        } // sayHi
+    }// oldObj 
+    
+    
+    console.log(`sayHi_Old => x=${oldObj.x}, y=${oldObj.y} :D`);
+    // => ES6 : Property 축약 적용
+    //   객체의 속성명과 동일한 이름의 변수의 값이 할당
+
+    let xx = 10, yy = 10;
+    let newObj = {
+        xx,             // 값을 할당하지 않음
+        yy,             // 값을 할당하지 않음
+        sayHi: () => {
+            console.log(`sayHi_New => xx=${newObj.xx}, yy=${this.yy} ^0^`); // 화살표 함수 시 this가 적용 안 됨
+        } // sayHi
+    }// newObj 
+
+
+    console.log(`sayHi_New => x=${newObj.xx}, y=${newObj.yy} ^0^`);
+
+
+    oldObj.sayHi();
+    newObj.sayHi();     // 화살표 함수는 this 적용이 안됨
+   
+   
+    // 2.2) 메서드 축약 
+    // => ES5: 익명함수 형식으로 정의
+    // => ES6: function 키워드 생략한 선언함수형식으로 정의
+    //         ES6 부터 정의된 메서드 정의 규정 
+    </script>
+
+</head>
+<body>
+    <h2>** 1. Object Destructuring(구조분해) **</h2>
+    <h2>** 2. Object 축약표현 **</h2>
+    => 2.1) Property 축약<br>
+    => 2.2) 메서드 축약<br>
+    <hr>
+    => Console 에서 확인하세요 ~~<br>
+</body>
+</html>
