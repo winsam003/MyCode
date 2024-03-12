@@ -6,8 +6,8 @@
 // => <React.Fragment> 는 렌더링 되지않음
 function FragTest({name}) {
     return (
-      //<div>
-      <React.Fragment>  
+      //<div> 
+      <React.Fragment>   
         <h1>** React.Fragment Test **</h1>
         <p>** 이름 : {name}</p>
       </React.Fragment>
