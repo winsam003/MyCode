@@ -85,7 +85,7 @@
 
 
 
-export default function Header(props) {  // 데이터를 전달해주는 객체가 props 인데 위(parants)에서 아래(child)로만 가능 함
+export default function Header() {  // 데이터를 전달해주는 객체가 props 인데 위(parants)에서 아래(child)로만 가능 함
     return (
         <header>
             <h1>** 여기는 Header 입니다! **</h1>
