@@ -28,6 +28,8 @@ const TodoList = ({todo, onUpdate, onDelete}) => {
   }; //analyzeTodo
 
   const {totalCount, doneCount, notDoneCount} = useMemo(analyzeTodo, [todo]);
+  // analyzeTodo를 호출하는 구문은 없음 하지만 todo 의존성배열이 바뀐다는 것은 부모 컴포넌트에서 useState가 발생하는 것이고 useState가 발생하면 리렌더링이 되므로 
+  // analyzTodo도 재 실행 됨
 
   return (
     <div className="TodoList">

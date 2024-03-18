@@ -33,7 +33,7 @@ import { useState, useReducer } from "react";
 // => 초기화버튼 추가하기 
 
 // => 상태변화함수 : 내부에서 상태값 변경
-function myreducer(state, action) {
+function myreducer(state, action) { // state: 상태객체, action: 동작객체
   // 상태값 변경 구현
   // => action.type 이 "Increase" 이면  return state+action.data
   switch (action.type) {
